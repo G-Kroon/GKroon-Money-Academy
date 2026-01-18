@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mzansi Money Academy — Financial Literacy Pilot</title>
+  <meta name="description" content="Pilot 3-module financial literacy course for South Africa: Budgeting, Credit & Savings." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="#" aria-label="Mzansi Money Academy home">
+        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='36' height='36'><rect width='36' height='36' rx='6' fill='%23006aa7'/><text x='50%' y='55%' font-size='20' text-anchor='middle' fill='white' font-family='Arial' font-weight='700'>MM</text></svg>" alt="" />
+        <span class="brand-text">GKroon Money Academy</span>
+      </a>
+
+      <nav class="main-nav" role="navigation" aria-label="Main">
+        <button id="nav-toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
+        <ul id="nav-list" class="nav-list">
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#how-it-works">How it works</a></li>
+          <li><a href="#dashboard" id="dashboard-link">Dashboard</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1 id="hero-title">Practical financial skills for everyday life in South Africa</h1>
+          <p class="lead">A free pilot 3‑module course: Budgeting, Credit & Debt, Savings & Investing basics. Short videos, worksheets, quizzes and a certificate.</p>
+          <div class="hero-ctas">
+            <a class="btn primary" href="#courses" id="start-learning">Browse courses</a>
+            <button class="btn outline" id="join-pilot">Join pilot (free)</button>
+          </div>
+          <p class="note">Low‑bandwidth friendly: downloadable PDFs and SMS reminders available.</p>
+        </div>
+
+        <div class="hero-card" aria-hidden="true">
+          <div class="card">
+            <h3>Pilot snapshot</h3>
+            <ul>
+              <li><strong>Duration</strong> 6 weeks (2 weeks/module)</li>
+              <li><strong>Format</strong> Micro‑videos, worksheets, quiz, live Q&A</li>
+              <li><strong>Language</strong> English (add Afrikaans/Xhosa soon)</li>
+            </ul>
+            <div class="small-cta">
+              <button class="btn small" id="enrol-now">Enrol now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="courses" class="container courses-section" aria-labelledby="courses-title">
+      <h2 id="courses-title">Course catalog</h2>
+      <div class="filters">
+        <label for="filter-level">Level</label>
+        <select id="filter-level" aria-label="Filter by level">
+          <option value="all">All</option>
+          <option value="beginner">Beginner</option>
+        </select>
+
+        <label for="filter-language">Language</label>
+        <select id="filter-language" aria-label="Filter by language">
+          <option value="all">All</option>
+          <option value="en">English</option>
+        </select>
+
+        <input id="search" type="search" placeholder="Search courses" aria-label="Search courses" />
+      </div>
+
+      <div id="course-list" class="course-grid" role="list"></div>
+    </section>
+
+    <section id="how-it-works" class="container how-section" aria-labelledby="how-title">
+      <h2 id="how-title">How the pilot works</h2>
+      <ol>
+        <li>Enroll for free and complete short lessons at your own pace.</li>
+        <li>Complete quizzes and submit a practical worksheet to earn a certificate.</li>
+        <li>Join a live group Q&A at the end of each module.</li>
+      </ol>
+      <p class="disclaimer"><strong>Disclaimer</strong> This course provides general financial education and is not personalised financial advice. For regulated advice consult a licensed professional.</p>
+    </section>
+
+    <section id="dashboard" class="container dashboard-section" aria-labelledby="dashboard-title">
+      <h2 id="dashboard-title">Learner dashboard</h2>
+      <div id="dashboard-root" class="dashboard-root">
+        <p class="muted">Sign up or enrol in a course to see your progress here.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="container contact-section" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact and feedback</h2>
+      <form id="contact-form" class="contact-form" aria-label="Contact form">
+        <label for="name">Name</label>
+        <input id="name" name="name" required />
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Send</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> GKroon Money Academy — Pilot course for South Africa</p>
+      <p class="small">Built for demonstration and pilot use. Include FSCA‑aligned disclaimers before public launch.</p>
+    </div>
+  </footer>
+
+  <!-- Course detail modal -->
+  <div id="course-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content" role="document">
+      <button class="modal-close" id="modal-close" aria-label="Close">×</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
