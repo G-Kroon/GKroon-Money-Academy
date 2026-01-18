@@ -1,0 +1,122 @@
+/* styles.css
+   Purpose: Responsive, accessible styling for the pilot site.
+   Notes: Use CSS variables for quick theming. Keep layout simple for low-bandwidth devices.
+*/
+
+/* Root variables */
+:root{
+  --bg:#f7fbfd;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --accent:#006aa7;
+  --accent-600:#005b8f;
+  --accent-100:#e6f3fb;
+  --radius:10px;
+  --max-width:1100px;
+  --gap:18px;
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:var(--font-sans);
+  background:linear-gradient(180deg,var(--bg),#ffffff);
+  color:#0f172a;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+  font-size:16px;
+}
+
+/* Container */
+.container{
+  width:calc(100% - 32px);
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:24px 16px;
+}
+
+/* Header */
+.site-header{
+  background:transparent;
+  position:sticky;
+  top:0;
+  z-index:40;
+  backdrop-filter: blur(6px);
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  color:inherit;
+}
+.brand img{width:36px;height:36px;border-radius:6px}
+.brand-text{font-weight:700}
+.main-nav{display:flex;align-items:center;gap:12px}
+#nav-toggle{display:none}
+.nav-list{list-style:none;margin:0;padding:0;display:flex;gap:12px}
+.nav-list a{text-decoration:none;color:var(--muted);padding:8px;border-radius:8px}
+.nav-list a:hover{color:var(--accent);background:var(--accent-100)}
+
+/* Hero */
+.hero{padding:36px 0}
+.hero-inner{display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:center}
+.hero-copy h1{font-size:clamp(1.4rem,2.6vw,2.2rem);margin:0 0 12px}
+.lead{color:var(--muted);margin:0 0 16px}
+.hero-ctas{display:flex;gap:12px;margin-bottom:8px}
+.btn{border:1px solid transparent;padding:10px 14px;border-radius:8px;cursor:pointer;font-weight:600}
+.btn.primary{background:var(--accent);color:white}
+.btn.outline{background:transparent;border-color:var(--accent);color:var(--accent)}
+.btn.small{padding:8px 10px;font-size:0.9rem}
+.note{font-size:0.9rem;color:var(--muted)}
+
+/* Card */
+.card{background:var(--card);padding:16px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(12,20,30,0.06)}
+
+/* Courses */
+.courses-section{padding:18px 0}
+.filters{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:16px}
+.filters label{font-size:0.9rem;color:var(--muted)}
+.filters select,input{padding:8px;border-radius:8px;border:1px solid #e6eef6;background:white}
+
+.course-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.course-card{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 6px 18px rgba(12,20,30,0.04);display:flex;flex-direction:column;gap:10px}
+.course-card h3{margin:0;font-size:1.05rem}
+.course-meta{font-size:0.9rem;color:var(--muted)}
+.course-actions{margin-top:auto;display:flex;gap:8px}
+
+/* Dashboard */
+.dashboard-root{background:var(--card);padding:16px;border-radius:12px;min-height:120px}
+.progress{background:#e6f3fb;border-radius:999px;height:12px;overflow:hidden}
+.progress-bar{height:100%;background:var(--accent);width:0%}
+
+/* Contact */
+.contact-form{display:grid;gap:10px;max-width:520px}
+.contact-form input,.contact-form textarea{padding:10px;border-radius:8px;border:1px solid #e9f2fb}
+
+/* Footer */
+.site-footer{padding:18px 0;background:transparent;color:var(--muted)}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+
+/* Modal */
+.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(6,10,15,0.45);padding:20px}
+.modal[aria-hidden="false"]{display:flex}
+.modal-content{background:var(--card);padding:18px;border-radius:12px;max-width:720px;width:100%;position:relative}
+.modal-close{position:absolute;right:12px;top:12px;border:0;background:transparent;font-size:20px;cursor:pointer}
+
+/* Responsive */
+@media (max-width:880px){
+  .hero-inner{grid-template-columns:1fr;gap:16px}
+  #nav-toggle{display:inline-block}
+  .nav-list{display:none;position:absolute;right:16px;top:64px;background:white;padding:12px;border-radius:8px;box-shadow:0 8px 24px rgba(12,20,30,0.08)}
+  .nav-list.show{display:flex;flex-direction:column}
+}
