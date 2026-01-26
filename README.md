@@ -2,7 +2,7 @@
 
 **Overview**
 
-This repository contains a lightweight, client-side prototype for a South Africa‑focused financial literacy pilot. It includes a 3‑module course catalog (Budgeting, Credit & Debt, Savings & Investing), enrolment, simple quizzes, worksheet submission simulation, and a printable certificate. The prototype is intentionally offline‑friendly and uses `localStorage` to persist learner state.
+This repository contains a lightweight, client-side prototype for a South Africa‑focused financial literacy demo. It includes a 3‑module course catalog (Budgeting, Credit & Debt, Savings & Investing), enrolment, simple quizzes, worksheet submission simulation, and a printable certificate. The prototype is intentionally offline‑friendly and uses `localStorage` to persist learner state.
 
 **Files**
 
