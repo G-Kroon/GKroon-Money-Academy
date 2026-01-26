@@ -238,7 +238,7 @@ function renderDashboard() {
         <p class="muted">Progress: ${pct}% • Quiz: ${e.quizPassed ? "Passed" : "Not passed"} • Worksheet: ${e.worksheetSubmitted ? "Submitted" : "Not submitted"}</p>
         <div style="margin-top:8px;">
           <button class="btn outline" data-action="resume" data-id="${cid}">Resume</button>
-          ${e.quizPassed && e.worksheetSubmitted ? `<button class="btn primary" data-action="certificate" data-id="${cid}">Download certificate</button>` : ""}
+          ${e.quizPassed && e.worksheetSubmitted ? /*`<button class="btn primary" data-action="certificate" data-id="${cid}">Download certificate</button>` : ""}*/
         </div>
       </div>
     `;
