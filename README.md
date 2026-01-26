@@ -1,4 +1,4 @@
-# GKroon-Money-Academy — Pilot 3‑Module Financial Literacy Website
+# GKroon-Money-Academy — DEMO‑Module Financial Literacy Website
 
 **Overview**
 
